@@ -4,6 +4,33 @@ import { selectUsers } from "../../store/users/selectors";
 
 export const UsersTable = () => {
   const { users } = useSelector(selectUsers);
+  const { filteredName, filteredUsername, filteredEmail, filteredPhone } =
+    useSelector(selectUsers);
+
+  const getFilteredUsers = () => {
+    return users.filter(
+      (user) =>
+        user.name.toLowerCase().includes(filteredName.toLowerCase()) &&
+        user.username.toLowerCase().includes(filteredUsername.toLowerCase()) &&
+        user.email.toLowerCase().includes(filteredEmail.toLowerCase()) &&
+        user.phone.toLowerCase().includes(filteredPhone.toLowerCase())
+    );
+  };
+  // const getFilteredUsersByUsername = () => {
+  //   return getFilteredUsersByName().filter((user) =>
+  //     user.name.toLowerCase().includes(filteredUsername.toLowerCase())
+  //   );
+  // };
+  // const getFilteredUsersByEmail = () => {
+  //   return getFilteredUsersByUsername().filter((user) =>
+  //     user.name.toLowerCase().includes(filteredEmail.toLowerCase())
+  //   );
+  // };
+  // const getFilteredUsers = () => {
+  //   return getFilteredUsersByEmail().filter((user) =>
+  //     user.name.toLowerCase().includes(filteredPhone.toLowerCase())
+  //   );
+  // };
 
   return (
     <table>
@@ -16,7 +43,7 @@ export const UsersTable = () => {
         </tr>
       </thead>
       <tbody>
-        {users?.map((user) => (
+        {getFilteredUsers()?.map((user) => (
           <tr key={user.id}>
             <td>{user.name}</td>
             <td>{user.username}</td>
