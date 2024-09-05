@@ -38,6 +38,7 @@ export const getUsersThunk = createAsyncThunk<
 >("shop/getAllProducts", async (_, thunkAPI) => {
   try {
     const { data } = await api<User[]>(`users`);
+    console.log(data);
     return data;
   } catch (error: any) {
     const errorMessage: string = error.response?.data?.message ?? error.message;

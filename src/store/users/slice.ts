@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { User } from "./operations";
 import { getUsersThunk } from "./operations";
 
-interface UsersState {
+export interface UsersState {
   error: string | null;
   users: User[];
 }
