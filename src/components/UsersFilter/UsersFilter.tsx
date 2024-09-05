@@ -8,6 +8,7 @@ import {
   setFilteredPhone,
   setFilteredUsername,
 } from "../../store/users/slice";
+import { Search } from "./UsersFilter.Styled";
 
 export const UsersFilter = () => {
   const dispatch = useAppDispatch();
@@ -37,7 +38,7 @@ export const UsersFilter = () => {
   }
 
   return (
-    <div>
+    <Search>
       <input
         type="text"
         name="name"
@@ -62,6 +63,6 @@ export const UsersFilter = () => {
         onChange={handleSetFilter}
         value={filteredPhone}
       />
-    </div>
+    </Search>
   );
 };
