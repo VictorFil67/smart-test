@@ -3,13 +3,15 @@ import React, { useEffect } from "react";
 import "./App.css";
 import { useAppDispatch } from "./store/store";
 import { getUsersThunk } from "./store/users/operations";
-import { useSelector } from "react-redux";
-import { selectUsers } from "./store/users/selectors";
+// import { useSelector } from "react-redux";
+// import { selectUsers } from "./store/users/selectors";
+import { UsersTable } from "./components/UsersTable/UsersTable";
+import { UsersFilter } from "./components/UsersFilter/UsersFilter";
 
 function App() {
   const dispatch = useAppDispatch();
-  const { users } = useSelector(selectUsers);
-  console.log(users);
+  // const { users } = useSelector(selectUsers);
+  // console.log(users);
 
   useEffect(() => {
     dispatch(getUsersThunk())
@@ -20,28 +22,8 @@ function App() {
 
   return (
     <div className="App">
-      {" "}
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Spent</th>
-            <th>Medicine</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users?.map((user) => (
-            <tr key={user.id}>
-              <td>{user.name}</td>
-              <td>{user.username}</td>
-              <td>{user.email}</td>
-              <td>{user.phone}</td>
-              <td></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <UsersFilter />
+      <UsersTable />
     </div>
   );
 }
