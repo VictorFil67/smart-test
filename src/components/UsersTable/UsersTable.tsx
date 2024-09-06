@@ -35,7 +35,6 @@ export const UsersTable = () => {
             <td>{user.username}</td>
             <td>{user.email}</td>
             <td>{user.phone}</td>
-            {/* <td></td> */}
           </tr>
         ))}
       </tbody>

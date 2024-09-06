@@ -27,30 +27,4 @@ export const Table = styled.table`
   & tr:hover {
     background-color: #f1f1f1;
   }
-  /* & button {
-    border: 1px solid rgba(89, 177, 122, 0.5);
-    border-radius: 30px;
-    padding: 8px 18px;
-    width: 74px;
-    height: 34px;
-    background-color: transparent;
-    color: var(--green);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.125;
-    text-align: center;
-    text-decoration: none;
-  }
-  & button:hover {
-    background-color: var(--green);
-    color: var(--white);
-  }
-  @media screen and (min-width: 768px) {
-    width: 704px;
-    max-width: 100%;
-    height: 512px;
-  }
-  @media screen and (min-width: 1440px) {
-    width: 576px;
-  } */
 `;
