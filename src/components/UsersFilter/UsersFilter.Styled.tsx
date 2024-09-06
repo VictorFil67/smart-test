@@ -10,8 +10,8 @@ export const Search = styled.div`
     gap: 5px;
   }
   & input {
-    padding: 5px;
-    border-radius: 15px;
+    padding: 10px;
+    border-radius: 20px;
     border: 1px solid rgba(29, 30, 33, 0.2);
     outline: transparent;
     &:focus-within {

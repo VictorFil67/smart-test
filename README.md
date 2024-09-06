@@ -6,7 +6,7 @@ I started by setting up a basic React app and integrating TypeScript to ensure t
 State Management with Redux Toolkit:
 
 I used Redux Toolkit to simplify the state management for fetching and storing user data. The createAsyncThunk function was used to handle asynchronous API calls, ensuring that data fetching logic remained separate from UI components.
-The usersSlice was created to manage the user state, which included storing user data and handling filtering logic. The filtering inputs dispatched actions to update the Redux state.
+The slice was created to manage the user state, which included storing user data and handling filtering logic. The filtering inputs dispatched actions to update the Redux state.
 Dynamic Filtering:
 
 For the filtering functionality, I added individual input fields for each column (name, username, email, phone). Every time the user typed in one of the fields, it triggered a Redux action that updated the state and re-filtered the users. This ensured real-time updates in the table based on the user's input.
