@@ -39,30 +39,46 @@ export const UsersFilter = () => {
 
   return (
     <Search>
-      <input
-        type="text"
-        name="name"
-        onChange={handleSetFilter}
-        value={filteredName}
-      />
-      <input
-        type="text"
-        name="username"
-        onChange={handleSetFilter}
-        value={filteredUsername}
-      />
-      <input
-        type="text"
-        name="email"
-        onChange={handleSetFilter}
-        value={filteredEmail}
-      />
-      <input
-        type="text"
-        name="phone"
-        onChange={handleSetFilter}
-        value={filteredPhone}
-      />
+      <label>
+        Name
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter the name"
+          onChange={handleSetFilter}
+          value={filteredName}
+        />
+      </label>
+      <label>
+        Username
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter the username"
+          onChange={handleSetFilter}
+          value={filteredUsername}
+        />
+      </label>
+      <label>
+        Email
+        <input
+          type="text"
+          name="email"
+          placeholder="Enter the email"
+          onChange={handleSetFilter}
+          value={filteredEmail}
+        />
+      </label>
+      <label>
+        Phone
+        <input
+          type="text"
+          name="phone"
+          placeholder="Enter the phone"
+          onChange={handleSetFilter}
+          value={filteredPhone}
+        />
+      </label>
     </Search>
   );
 };
