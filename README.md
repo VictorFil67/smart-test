@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+Approach and Challenges
+Approach
+React with TypeScript Integration:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I started by setting up a basic React app and integrating TypeScript to ensure type safety. TypeScript provided strong typing for components, Redux actions, and state, ensuring that the app was more predictable and reliable.
+State Management with Redux Toolkit:
 
-## Available Scripts
+I used Redux Toolkit to simplify the state management for fetching and storing user data. The createAsyncThunk function was used to handle asynchronous API calls, ensuring that data fetching logic remained separate from UI components.
+The usersSlice was created to manage the user state, which included storing user data and handling filtering logic. The filtering inputs dispatched actions to update the Redux state.
+Dynamic Filtering:
 
-In the project directory, you can run:
+For the filtering functionality, I added individual input fields for each column (name, username, email, phone). Every time the user typed in one of the fields, it triggered a Redux action that updated the state and re-filtered the users. This ensured real-time updates in the table based on the user's input.
+Fetching User Data from API:
 
-### `npm start`
+I used the mock API https://jsonplaceholder.typicode.com/users to fetch the user data. The fetched data was stored in the Redux store, and it updated the UI dynamically when users searched for specific fields.
+UI Design:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I aimed to keep the design clean and user-friendly. The table layout was designed to ensure that users could easily view and filter the user information without distractions.
+Challenges
+TypeScript Integration:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+One challenge was ensuring proper TypeScript typings throughout the application, especially in Redux. Managing the types for actions, state, and API responses required careful attention to ensure strong type safety without introducing unnecessary complexity.
+Filtering Logic:
 
-### `npm test`
+Ensuring that the filter worked efficiently for multiple columns simultaneously was a challenge. The filtering needed to update in real-time without performance degradation, and keeping the logic clean was essential to avoid re-renders and unnecessary updates.
+API Handling and Error Management:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Another challenge was managing potential errors from the mock API and ensuring that the UI responded appropriately. Although the JSONPlaceholder API is generally reliable, handling cases where the data might not load or an error occurs was important for user experience.
+Overall, the project focused on creating a seamless, typed, and state-managed user management table with real-time filtering, leveraging both React and Redux Toolkit with TypeScript for a scalable solution.

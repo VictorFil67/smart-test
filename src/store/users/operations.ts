@@ -35,7 +35,7 @@ export const getUsersThunk = createAsyncThunk<
   User[],
   void,
   { rejectValue: string }
->("shop/getAllProducts", async (_, thunkAPI) => {
+>("users/getUsers", async (_, thunkAPI) => {
   try {
     const { data } = await api<User[]>(`users`);
     console.log(data);
